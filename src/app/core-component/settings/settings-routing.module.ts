@@ -1,5 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { BrandSettingComponent } from './brand-setting/brand-setting.component';
+import { SharedBrandSettingComponent } from './shared-brand-setting/shared-brand-setting.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'generalsettings', pathMatch: 'full' },
@@ -59,6 +61,10 @@ const routes: Routes = [
           import('./editpermission/editpermission.module').then(
             (m) => m.EditpermissionModule
           ),
+      },
+      {
+        path : "allSetting",
+        component:BrandSettingComponent
       },
     ],
   },

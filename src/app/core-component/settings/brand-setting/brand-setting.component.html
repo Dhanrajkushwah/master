@@ -1,0 +1,100 @@
+<div class="container">
+  <div class="row">
+    <h3>Settings</h3>
+    <div>
+      <a class="text_routes" routerLink="#"> Home </a>
+      <i class="fa fa-chevron-right fa-sm icon-color " aria-hidden="true"></i>Setting
+    </div>
+  </div>
+</div>
+
+
+<div class="d-flex align-items-start side_bar mt-4">
+  <div class="row">
+    <div class="col-md-6">
+      <div class="nav flex-column nav-pills me-0" id="v-pills-tab"
+       role="tablist" 
+      aria-orientation="vertical">
+        <button class="nav-link  unique my-button" id="v-pills-home-tab"
+         data-bs-toggle="pill" data-bs-target="#v-pills-home" 
+         type="button" role="tab" aria-controls="v-pills-home" aria-selected="true">Brand Setting 
+         <i class="fa fa-chevron-right ml-4 fa-sm float-end mt-1 icon-color" aria-hidden="true"></i>
+        </button>
+        <button class="nav-link my-button" id="v-pills-profile-tab" 
+        data-bs-toggle="pill" data-bs-target="#v-pills-profile"
+         type="button" role="tab" aria-controls="v-pills-profile" aria-selected="false">Email Setting 
+         <i class="fa fa-chevron-right float-end mt-1 icon-color" aria-hidden="true"></i>  
+        </button>
+        <button class="nav-link my-button" id="v-pills-messages-tab"
+         data-bs-toggle="pill" data-bs-target="#v-pills-messages" 
+         type="button" role="tab" aria-controls="v-pills-messages" aria-selected="false">
+         Pusher Setting 
+         <i class="fa fa-chevron-right  fa-sm float-end mt-1 icon-color" aria-hidden="true"></i>
+        </button>
+        <button class="nav-link my-button" id="v-pills-settings-tab"
+         data-bs-toggle="pill" data-bs-target="#v-pills-settings"
+          type="button" role="tab" aria-controls="v-pills-settings" 
+          aria-selected="false"> Payment Settings 
+          <i class="fa fa-chevron-right fa-sm float-end mt-1 icon-color" aria-hidden="true"></i>
+      </button>
+      <button class="nav-link my-button" id="v-pills-recaptcha-tab"
+         data-bs-toggle="pill" data-bs-target="#v-pills-recaptcha"
+          type="button" role="tab" aria-controls="v-pills-recaptcha" 
+          aria-selected="false"> ReCaptcha Settings 
+          <i class="fa fa-chevron-right mt-1 fa-sm float-end icon-color" aria-hidden="true"></i>
+      </button>
+      <button class="nav-link my-button" id="v-pills-storage-tab"
+         data-bs-toggle="pill" data-bs-target="#v-pills-storage"
+          type="button" role="tab" aria-controls="v-pills-storage" 
+          aria-selected="false"> Storage Settings 
+          <i class="fa fa-chevron-right mt-1 fa-sm float-end icon-color" aria-hidden="true"></i>
+      </button>
+      <button class="nav-link my-button" id="v-pills-cache-tab"
+         data-bs-toggle="pill" data-bs-target="#v-pills-cache"
+          type="button" role="tab" aria-controls="v-pills-cache" 
+          aria-selected="false"> Cache Settings    
+          <i class="fa fa-chevron-right mt-1  fa-sm float-end icon-color" aria-hidden="true"></i>
+      </button>
+      <button class="nav-link my-button" id="v-pills-cookie-tab"
+         data-bs-toggle="pill" data-bs-target="#v-pills-cookie"
+          type="button" role="tab" aria-controls="v-pills-cookie" 
+          aria-selected="false"> Cookie Settings <i class="fa fa-chevron-right mt-1 icon-color fa-sm float-end" aria-hidden="true"></i>
+      </button>
+      <!-- <button class="nav-link my-button" id="v-pills-chatgpt-tab"
+         data-bs-toggle="pill" data-bs-target="#v-pills-chatgpt"
+          type="button" role="tab" aria-controls="v-pills-chatgpt" 
+          aria-selected="false"> Chatgpt Settings
+           <i class="fa fa-chevron-right mt-1 fa-sm float-end icon-color" aria-hidden="true"></i>
+      </button> -->
+      </div>  
+    </div>
+</div>
+    <div class="tab-content" id="v-pills-tabContent">
+      <div class="tab-pane fade show active"
+       id="v-pills-home"
+        role="tabpanel"
+         aria-labelledby="v-pills-home-tab"><app-shared-brand-setting></app-shared-brand-setting>
+         </div>
+      <div class="tab-pane fade"
+       id="v-pills-profile"
+        role="tabpanel" 
+        aria-labelledby="v-pills-profile-tab"><app-email-setting></app-email-setting></div>
+      <div class="tab-pane fade" id="v-pills-messages"  role="tabpanel" aria-labelledby="v-pills-messages-tab"><app-pusher-setting></app-pusher-setting></div>
+      <div class="tab-pane fade" id="v-pills-settings" role="tabpanel"
+       aria-labelledby="v-pills-settings-tab"><app-payment-setting></app-payment-setting></div>
+       <div class="tab-pane fade" id="v-pills-recaptcha" role="tabpanel"
+       aria-labelledby="v-pills-recaptcha-tab"><app-recaptcha-setting></app-recaptcha-setting></div>
+       <div class="tab-pane fade" id="v-pills-storage" role="tabpanel"
+       aria-labelledby="v-pills-storage-tab"><app-storage-setting></app-storage-setting></div>
+       <div class="tab-pane fade" id="v-pills-seo" role="tabpanel"
+       aria-labelledby="v-pills-seo-tab"><app-seo-setting></app-seo-setting></div>
+       <div class="tab-pane fade" id="v-pills-cache" role="tabpanel"
+       aria-labelledby="v-pills-cache-tab"><app-cache-setting></app-cache-setting></div>
+       <div class="tab-pane fade" id="v-pills-cookie" role="tabpanel"
+       aria-labelledby="v-pills-cookie-tab"><app-cookie-setting></app-cookie-setting></div>
+       <!-- <div class="tab-pane fade" id="v-pills-chatgpt" role="tabpanel"
+       aria-labelledby="v-pills-chatgpt-tab"><app-chatgpt-setting></app-chatgpt-setting></div> -->
+      </div>
+      
+    
+  </div>

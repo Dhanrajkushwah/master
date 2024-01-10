@@ -1,0 +1,1237 @@
+<div class="container">
+    <div class="row mb-3">
+      <div class="col-md-12">
+        <div class="card shadow mt-3">
+          <div class="card-header">
+            <h5>Payment Settings</h5>
+            <small class="text-dark font-weight-bold"
+              >These details will be used to collect subscription plan
+              payments.Each subscription plan will have a payment button based
+              on the below configuration.</small
+            >
+          </div>
+          <div class="card-body">
+            <form id="setting-form" method="post">
+              <div class="row">
+                <div class="col-12">
+                  <div class="">
+                    <div class="card-body">
+                      <div class="row">
+                        <div class="col-lg-6 col-md-6 col-sm-6 form-group">
+                          <label class="col-form-label">Currency *</label>
+                          <input
+                            type="text"
+                            name="currency"
+                            class="form-control"
+                            required
+                          />
+                        </div>
+                        <div class="col-lg-6 col-md-6 col-sm-6 form-group">
+                          <label for="currency_symbol" class="col-form-label"
+                            >Currency Symbol</label
+                          >
+                          <input
+                            type="text"
+                            name="currency_symbol"
+                            class="form-control"
+                            id="currency_symbol"
+                            value="$"
+                            required
+                          />
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="faq justify-content-center">
+                <div class="col-sm-12 col-md-12">
+                  <div
+                    class="accordion accordion-flush setting-accordion"
+                    id="accordionExample"
+                  >
+                    <!-- Manually -->
+                    <div class="accordion-item">
+                      <h2 class="accordion-header" id="heading-2-0">
+                        <div class="">
+                          <button
+                            class="accordion-button collapsed d-flex justify-content-between"
+                            type="button"
+                            data-bs-toggle="collapse"
+                            data-bs-target="#collapse14"
+                            aria-expanded="true"
+                            aria-controls="collapse14"
+                          >
+                            <span class=""> Manually </span>
+                            <div class="w-100 d-flex justify-content-end">
+                              <label
+                                class="custom-control-label form-control-label"
+                                for="is_banktransfer_enabled"
+                              >
+                                <span class="me-2">Enable</span></label
+                              >
+                              <div
+                                class="form-check form-switch custom-switch-v1"
+                              >
+                                <input
+                                  type="hidden"
+                                  name="is_manually_enabled"
+                                  value="off"
+                                />
+                                <input
+                                  type="checkbox"
+                                  class="form-check-input"
+                                  name="is_manually_enabled"
+                                  id="is_manually_enabled"
+                                  checked
+                                />
+                              </div>
+                            </div>
+                          </button>
+                        </div>
+                      </h2>
+                      <div
+                        id="collapse14"
+                        class="accordion-collapse collapse"
+                        aria-labelledby="heading-2-0"
+                        data-bs-parent="#accordionExample"
+                      >
+                        <div class="accordion-body" style="padding: 20px">
+                          <div class="row">
+                            <div class="col-8">
+                              <span class="me-2">
+                                Requesting manual payment for the planned
+                                amount for the subscriptions plan.
+                              </span>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <!-- Bank Transfer -->
+                    <div class="accordion-item">
+                      <h2 class="accordion-header" id="heading-2-1">
+                        <button
+                          class="accordion-button collapsed"
+                          type="button"
+                          data-bs-toggle="collapse"
+                          data-bs-target="#collapse15"
+                          aria-expanded="true"
+                          aria-controls="collapse15"
+                        >
+                          <span class="" style="white-space: nowrap">
+                            Bank Transfer
+                          </span>
+                          <div class="w-100 d-flex justify-content-end">
+                            <label
+                              class="custom-control-label form-control-label"
+                              for="is_banktransfer_enabled"
+                            >
+                              <span class="me-2">Enable</span></label
+                            >
+                            <div
+                              class="form-check form-switch custom-switch-v1"
+                            >
+                              <input
+                                type="hidden"
+                                name="is_banktransfer_enabled"
+                                value="off"
+                              />
+                              <input
+                                type="checkbox"
+                                class="form-check-input"
+                                name="is_banktransfer_enabled"
+                                id="is_banktransfer_enabled"
+                                checked
+                              />
+                            </div>
+                          </div>
+                        </button>
+                      </h2>
+                      <div
+                        id="collapse15"
+                        class="accordion-collapse collapse"
+                        aria-labelledby="heading-2-1"
+                        data-bs-parent="#accordionExample"
+                      >
+                        <div class="accordion-body" style="padding: 20px">
+                          <div class="row">
+                            <div class="form-group col-12">
+                              <label for="bank_details" class="col-form-label"
+                                >Bank Details</label
+                              >
+                              <textarea
+                                class="form-control"
+                                rows="6"
+                                name="bank_details"
+                                cols="50"
+                                id="bank_details"
+                              >
+Bank : Bank of India &lt;/br&gt;
+Account Holder Name : LeadGo &lt;/br&gt;
+Account Number : 123456789  &lt;/br&gt;
+IFSC Code: ABC123  &lt;/br&gt;
+Swift Code: 123456 &lt;/br&gt;</textarea
+
+                              >
+                            </div>
+                            <small class="text-xs">
+                              Example: Bank: bank name &lt;/br&gt; Account
+                              Number : 0000 0000 &lt;/br&gt;
+                            </small>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <!-- Strip -->
+                    <div class="accordion-item">
+                      <h2 class="accordion-header" id="heading-2-2">
+                        <button
+                          class="accordion-button collapsed"
+                          type="button"
+                          data-bs-toggle="collapse"
+                          data-bs-target="#collapse1"
+                          aria-expanded="true"
+                          aria-controls="collapse1"
+                        >
+                          <span class="">
+                            Stripe
+                          </span>
+                          <div class="w-100 d-flex justify-content-end">
+                            <label
+                              class="custom-control-label form-control-label"
+                              for="is_stripe_enabled"
+                            >
+                              <span class="me-2">Enable</span></label
+                            >
+                            <div
+                              class="form-check form-switch custom-switch-v1"
+                            >
+                              <input
+                                type="hidden"
+                                name="is_stripe_enabled"
+                                value="off"
+                              />
+                              <input
+                                type="checkbox"
+                                class="form-check-input"
+                                name="is_stripe_enabled"
+                                id="is_stripe_enabled"
+                                checked
+                              />
+                            </div>
+                          </div>
+                        </button>
+                      </h2>
+                      <div
+                        id="collapse1"
+                        class="accordion-collapse collapse"
+                        aria-labelledby="heading-2-2"
+                        data-bs-parent="#accordionExample"
+                      >
+                        <div class="accordion-body">
+                          <div class="row">
+                            <div class="col-md-6">
+                              <div class="form-group">
+                                <label for="stripe_key" class="col-form-label"
+                                  >Stripe Key</label
+                                >
+                                <input
+                                  class="form-control"
+                                  placeholder="Stripe Key"
+                                  name="stripe_key"
+                                  type="text"
+                                  value="******************"
+                                  id="stripe_key"
+                                />
+                              </div>
+                            </div>
+                            <div class="col-md-6">
+                              <div class="form-group">
+                                <label
+                                  for="stripe_secret"
+                                  class="col-form-label"
+                                  >Stripe Secret</label
+                                >
+                                <input
+                                  class="form-control"
+                                  placeholder="Stripe Secret"
+                                  name="stripe_secret"
+                                  type="text"
+                                  value="******************"
+                                  id="stripe_secret"
+                                />
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <!-- Paypal -->
+                    <div class="accordion-item">
+                      <h2 class="accordion-header" id="heading-2-3">
+                        <button
+                          class="accordion-button collapsed"
+                          type="button"
+                          data-bs-toggle="collapse"
+                          data-bs-target="#collapse2"
+                          aria-expanded="true"
+                          aria-controls="collapse2"
+                        >
+                          <span class="">
+                            Paypal
+                          </span>
+                          <div class="w-100 d-flex justify-content-end">
+                            <label
+                              class="custom-control-label form-control-label"
+                              for="is_paypal_enabled"
+                            >
+                              <span class="me-2">Enable</span></label
+                            >
+                            <div
+                              class="form-check form-switch custom-switch-v1"
+                            >
+                              <input
+                                type="hidden"
+                                name="is_paypal_enabled"
+                                value="off"
+                              />
+                              <input
+                                type="checkbox"
+                                class="form-check-input"
+                                name="is_paypal_enabled"
+                                id="is_paypal_enabled"
+                                checked
+                              />
+                            </div>
+                          </div>
+                        </button>
+                      </h2>
+                      <div
+                        id="collapse2"
+                        class="accordion-collapse collapse"
+                        aria-labelledby="heading-2-3"
+                        data-bs-parent="#accordionExample"
+                      >
+                        <div class="accordion-body">
+                          <div class="row">
+                            <div class="col-md-12 pb-4">
+                              <label
+                                class="paypal-label col-form-label"
+                                for="paypal_mode"
+                                >Paypal Mode</label
+                              >
+                              <br />
+                              <div class="">
+                                <div class="mr-2" >
+                                  <div class="border card p-3">
+                                    <div class="form-check">
+                                      <label
+                                        class="form-check-labe text-dark"
+                                      >
+                                        <input
+                                          type="radio"
+                                          name="paypal_mode"
+                                          value="sandbox"
+                                          class="form-check-input"
+                                          checked='"checked"'
+                                        />
+
+                                        Sandbox
+                                      </label>
+                                    </div>
+                                  </div>
+                                </div>
+                                <div class="mr-2 mt-3">
+                                  <div class="border card p-3">
+                                    <div class="form-check">
+                                      <label
+                                        class="form-check-labe text-dark"
+                                      >
+                                        <input
+                                          type="radio"
+                                          name="paypal_mode"
+                                          value="live"
+                                          class="form-check-input"
+                                        />
+
+                                        Live
+                                      </label>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="col-md-6">
+                              <div class="form-group">
+                                <label
+                                  for="paypal_client_id"
+                                  class="col-form-label"
+                                  >Client ID</label
+                                >
+                                <input
+                                  type="text"
+                                  name="paypal_client_id"
+                                  id="paypal_client_id"
+                                  class="form-control"
+                                  value="******************"
+                                  placeholder="Client ID"
+                                />
+                              </div>
+                            </div>
+                            <div class="col-md-6">
+                              <div class="form-group">
+                                <label
+                                  for="paypal_secret_key"
+                                  class="col-form-label"
+                                  >Secret Key</label
+                                >
+                                <input
+                                  type="text"
+                                  name="paypal_secret_key"
+                                  id="paypal_secret_key"
+                                  class="form-control"
+                                  value="******************"
+                                  placeholder="Secret Key"
+                                />
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <!-- Paystack -->
+                    <div class="accordion-item">
+                      <h2 class="accordion-header" id="heading-2-4">
+                        <button
+                          class="accordion-button collapsed"
+                          type="button"
+                          data-bs-toggle="collapse"
+                          data-bs-target="#collapse3"
+                          aria-expanded="true"
+                          aria-controls="collapse3"
+                        >
+                          <span class=""> Pay </span>
+                          <div class="w-100 d-flex justify-content-end">
+                            <label
+                              class="custom-control-label form-control-label"
+                              for="is_paystack_enabled"
+                            >
+                              <span class="me-2">Enable</span></label
+                            >
+                            <div
+                              class="form-check form-switch custom-switch-v1"
+                            >
+                              <input
+                                type="hidden"
+                                name="is_paystack_enabled"
+                                value="off"
+                              />
+                              <input
+                                type="checkbox"
+                                class="form-check-input"
+                                name="is_paystack_enabled"
+                                id="is_paystack_enabled"
+                                checked
+                              />
+                            </div>
+                          </div>
+                        </button>
+                      </h2>
+                      <div
+                        id="collapse3"
+                        class="accordion-collapse collapse"
+                        aria-labelledby="heading-2-4"
+                        data-bs-parent="#accordionExample"
+                      >
+                        <div class="accordion-body">
+                          <div class="row">
+                            <div class="col-md-6">
+                              <div class="form-group">
+                                <label
+                                  for="paypal_client_id"
+                                  class="col-form-label"
+                                  >Public Key</label
+                                >
+                                <input
+                                  type="text"
+                                  name="paystack_public_key"
+                                  id="paystack_public_key"
+                                  class="form-control"
+                                  value="******************"
+                                  placeholder="Public Key"
+                                />
+                              </div>
+                            </div>
+                            <div class="col-md-6">
+                              <div class="form-group">
+                                <label
+                                  for="paystack_secret_key"
+                                  class="col-form-label"
+                                  >Secret Key</label
+                                >
+                                <input
+                                  type="text"
+                                  name="paystack_secret_key"
+                                  id="paystack_secret_key"
+                                  class="form-control"
+                                  value="******************"
+                                  placeholder="Secret Key"
+                                />
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <!-- FLUTTERWAVE -->
+                    <div class="accordion-item">
+                      <h2 class="accordion-header" id="heading-2-5">
+                        <button
+                          class="accordion-button collapsed"
+                          type="button"
+                          data-bs-toggle="collapse"
+                          data-bs-target="#collapse4"
+                          aria-expanded="true"
+                          aria-controls="collapse4"
+                        >
+                          <span class="">
+                            Flutterwave
+                          </span>
+                          <div class="w-100 d-flex justify-content-end">
+                            <label
+                              class="custom-control-label form-control-label"
+                              for="is_flutterwave_enabled"
+                            >
+                              <span class="me-2">Enable</span></label
+                            >
+                            <div
+                              class="form-check form-switch custom-switch-v1"
+                            >
+                              <input
+                                type="hidden"
+                                name="is_flutterwave_enabled"
+                                value="off"
+                              />
+                              <input
+                                type="checkbox"
+                                class="form-check-input"
+                                name="is_flutterwave_enabled"
+                                id="is_flutterwave_enabled"
+                                checked
+                              />
+                            </div>
+                          </div>
+                        </button>
+                      </h2>
+                      <div
+                        id="collapse4"
+                        class="accordion-collapse collapse"
+                        aria-labelledby="heading-2-5"
+                        data-bs-parent="#accordionExample"
+                      >
+                        <div class="accordion-body">
+                          <div class="row">
+                            <div class="col-md-6">
+                              <div class="form-group">
+                                <label
+                                  for="paypal_client_id"
+                                  class="col-form-label"
+                                  >Public Key</label
+                                >
+                                <input
+                                  type="text"
+                                  name="flutterwave_public_key"
+                                  id="flutterwave_public_key"
+                                  class="form-control"
+                                  value="******************"
+                                  placeholder="Public Key"
+                                />
+                              </div>
+                            </div>
+                            <div class="col-md-6">
+                              <div class="form-group">
+                                <label
+                                  for="paystack_secret_key"
+                                  class="col-form-label"
+                                  >Secret Key</label
+                                >
+                                <input
+                                  type="text"
+                                  name="flutterwave_secret_key"
+                                  id="flutterwave_secret_key"
+                                  class="form-control"
+                                  value="******************"
+                                  placeholder="Secret Key"
+                                />
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <!-- Razorpay -->
+                    <div class="accordion-item">
+                      <h2 class="accordion-header" id="heading-2-6">
+                        <button
+                          class="accordion-button collapsed"
+                          type="button"
+                          data-bs-toggle="collapse"
+                          data-bs-target="#collapse5"
+                          aria-expanded="true"
+                          aria-controls="collapse5"
+                        >
+                          <span class="">
+                            Razorpay
+                          </span>
+                          <div class="w-100 d-flex justify-content-end">
+                            <label
+                              class="custom-control-label form-control-label"
+                              for="is_razorpay_enabled"
+                            >
+                              <span class="me-2">Enable</span></label
+                            >
+                            <div
+                              class="form-check form-switch custom-switch-v1"
+                            >
+                              <input
+                                type="hidden"
+                                name="is_razorpay_enabled"
+                                value="off"
+                              />
+                              <input
+                                type="checkbox"
+                                class="form-check-input"
+                                name="is_razorpay_enabled"
+                                id="is_razorpay_enabled"
+                                checked
+                              />
+                            </div>
+                          </div>
+                        </button>
+                      </h2>
+                      <div
+                        id="collapse5"
+                        class="accordion-collapse collapse"
+                        aria-labelledby="heading-2-6"
+                        data-bs-parent="#accordionExample"
+                      >
+                        <div class="accordion-body">
+                          <div class="row">
+                            <div class="col-md-6">
+                              <div class="form-group">
+                                <label
+                                  for="paypal_client_id"
+                                  class="col-form-label"
+                                  >Public Key</label
+                                >
+
+                                <input
+                                  type="text"
+                                  name="razorpay_public_key"
+                                  id="razorpay_public_key"
+                                  class="form-control"
+                                  value="******************"
+                                  placeholder="Public Key"
+                                />
+                              </div>
+                            </div>
+                            <div class="col-md-6">
+                              <div class="form-group">
+                                <label
+                                  for="paystack_secret_key"
+                                  class="col-form-label"
+                                  >Secret Key</label
+                                >
+                                <input
+                                  type="text"
+                                  name="razorpay_secret_key"
+                                  id="razorpay_secret_key"
+                                  class="form-control"
+                                  value="******************"
+                                  placeholder="Secret Key"
+                                />
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <!-- Paytm -->
+                    <div class="accordion-item">
+                      <h2 class="accordion-header" id="heading-2-7">
+                        <button
+                          class="accordion-button collapsed"
+                          type="button"
+                          data-bs-toggle="collapse"
+                          data-bs-target="#collapse6"
+                          aria-expanded="true"
+                          aria-controls="collapse6"
+                        >
+                          <span class="">
+                            Paytm
+                          </span>
+                          <div class="w-100 d-flex justify-content-end">
+                            <label
+                              class="custom-control-label form-control-label"
+                              for="is_paytm_enabled"
+                            >
+                              <span class="me-2">Enable</span></label
+                            >
+                            <div
+                              class="form-check form-switch custom-switch-v1"
+                            >
+                              <input
+                                type="hidden"
+                                name="is_paytm_enabled"
+                                value="off"
+                              />
+                              <input
+                                type="checkbox"
+                                class="form-check-input"
+                                name="is_paytm_enabled"
+                                id="is_paytm_enabled"
+                                checked
+                              />
+                            </div>
+                          </div>
+                        </button>
+                      </h2>
+                      <div
+                        id="collapse6"
+                        class="accordion-collapse collapse"
+                        aria-labelledby="heading-2-7"
+                        data-bs-parent="#accordionExample"
+                      >
+                        <div class="accordion-body">
+                          <div class="row">
+                            <div class="col-md-12 pb-4">
+                              <label
+                                class="paypal-label col-form-label"
+                                for="paypal_mode"
+                                >Paytm Environment</label
+                              >
+                              <br />
+                              <div class="d-flex">
+                                <div class="mr-2" >
+                                  <div class="border card p-3">
+                                    <div class="form-check">
+                                      <label
+                                        class="form-check-labe text-dark"
+                                      >
+                                        <input
+                                          type="radio"
+                                          name="paytm_mode"
+                                          value="local"
+                                          class="form-check-input"
+                                          checked='"checked"'
+                                        />
+
+                                        Local
+                                      </label>
+                                    </div>
+                                  </div>
+                                </div>
+                                <div class="mr-2 ms-3">
+                                  <div class="border card p-3">
+                                    <div class="form-check">
+                                      <label
+                                        class="form-check-labe text-dark"
+                                      >
+                                        <input
+                                          type="radio"
+                                          name="paytm_mode"
+                                          value="production"
+                                          class="form-check-input"
+                                        />
+
+                                        Production
+                                      </label>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="col-md-4">
+                              <div class="form-group">
+                                <label
+                                  for="paytm_public_key"
+                                  class="col-form-label"
+                                  >Merchant ID</label
+                                >
+                                <input
+                                  type="text"
+                                  name="paytm_merchant_id"
+                                  id="paytm_merchant_id"
+                                  class="form-control"
+                                  value="******************"
+                                  placeholder="Merchant ID"
+                                />
+                              </div>
+                            </div>
+                            <div class="col-md-4">
+                              <div class="form-group">
+                                <label
+                                  for="paytm_secret_key"
+                                  class="col-form-label"
+                                  >Merchant Key</label
+                                >
+                                <input
+                                  type="text"
+                                  name="paytm_merchant_key"
+                                  id="paytm_merchant_key"
+                                  class="form-control"
+                                  value="******************"
+                                  placeholder="Merchant Key"
+                                />
+                              </div>
+                            </div>
+                            <div class="col-md-4">
+                              <div class="form-group">
+                                <label
+                                  for="paytm_industry_type"
+                                  class="col-form-label"
+                                  >Industry Type</label
+                                >
+                                <input
+                                  type="text"
+                                  name="paytm_industry_type"
+                                  id="paytm_industry_type"
+                                  class="form-control"
+                                  value="******************"
+                                  placeholder="Industry Type"
+                                />
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <!-- Mercado Pago-->
+                    <div class="accordion-item">
+                      <h2 class="accordion-header" id="heading-2-8">
+                        <button
+                          class="accordion-button collapsed"
+                          type="button"
+                          data-bs-toggle="collapse"
+                          data-bs-target="#collapse7"
+                          aria-expanded="true"
+                          aria-controls="collapse7"
+                        >
+                          <span class="">
+                            Mercado Pago
+                          </span>
+                          <div class="w-100 d-flex justify-content-end">
+                            <label
+                              class="custom-control-label form-control-label"
+                              for="is_mercado_enabled"
+                            >
+                              <span class="me-2">Enable</span></label
+                            >
+                            <div
+                              class="form-check form-switch custom-switch-v1"
+                            >
+                              <input
+                                type="hidden"
+                                name="is_mercado_enabled"
+                                value="off"
+                              />
+                              <input
+                                type="checkbox"
+                                class="form-check-input"
+                                name="is_mercado_enabled"
+                                id="is_mercado_enabled"
+                                checked
+                              />
+                            </div>
+                          </div>
+                        </button>
+                      </h2>
+                      <div
+                        id="collapse7"
+                        class="accordion-collapse collapse"
+                        aria-labelledby="heading-2-8"
+                        data-bs-parent="#accordionExample"
+                      >
+                        <div class="accordion-body">
+                          <div class="row">
+                            <div class="col-md-12 pb-4">
+                              <label
+                                class="coingate-label col-form-label"
+                                for="mercado_mode"
+                                >Mercado Mode</label
+                              >
+                              <br />
+                              <div class="d-flex">
+                                <div class="mr-2" style="margin-right: 15px">
+                                  <div class="border card p-3">
+                                    <div class="form-check">
+                                      <label
+                                        class="form-check-labe text-dark"
+                                      >
+                                        <input
+                                          type="radio"
+                                          name="mercado_mode"
+                                          value="sandbox"
+                                          class="form-check-input"
+                                          checked='"checked"'
+                                        />
+                                        Sandbox
+                                      </label>
+                                    </div>
+                                  </div>
+                                </div>
+                                <div class="mr-2">
+                                  <div class="border card p-3">
+                                    <div class="form-check">
+                                      <label
+                                        class="form-check-labe text-dark"
+                                      >
+                                        <input
+                                          type="radio"
+                                          name="mercado_mode"
+                                          value="live"
+                                          class="form-check-input"
+                                        />
+                                        Live
+                                      </label>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="col-md-6">
+                              <div class="form-group">
+                                <label
+                                  for="mercado_access_token"
+                                  class="col-form-label"
+                                  >Access Token</label
+                                >
+                                <input
+                                  type="text"
+                                  name="mercado_access_token"
+                                  id="mercado_access_token"
+                                  class="form-control"
+                                  value="******************"
+                                  placeholder="Access Token"
+                                />
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <!-- Mollie -->
+                    <div class="accordion-item">
+                      <h2 class="accordion-header" id="heading-2-9">
+                        <button
+                          class="accordion-button collapsed"
+                          type="button"
+                          data-bs-toggle="collapse"
+                          data-bs-target="#collapse8"
+                          aria-expanded="true"
+                          aria-controls="collapse8"
+                        >
+                          <span class="">
+                            Mollie
+                          </span>
+                          <div class="w-100 d-flex justify-content-end">
+                            <label
+                              class="custom-control-label form-control-label"
+                              for="is_mollie_enabled"
+                            >
+                              <span class="me-2">Enable</span></label
+                            >
+                            <div
+                              class="form-check form-switch custom-switch-v1"
+                            >
+                              <input
+                                type="hidden"
+                                name="is_mollie_enabled"
+                                value="off"
+                              />
+                              <input
+                                type="checkbox"
+                                class="form-check-input"
+                                name="is_mollie_enabled"
+                                id="is_mollie_enabled"
+                                checked
+                              />
+                            </div>
+                          </div>
+                        </button>
+                      </h2>
+                      <div
+                        id="collapse8"
+                        class="accordion-collapse collapse"
+                        aria-labelledby="heading-2-9"
+                        data-bs-parent="#accordionExample"
+                      >
+                        <div class="accordion-body">
+                          <div class="row">
+                            <div class="col-md-6">
+                              <div class="form-group">
+                                <label
+                                  for="mollie_api_key"
+                                  class="col-form-label"
+                                  >Mollie Api Key</label
+                                >
+                                <input
+                                  type="text"
+                                  name="mollie_api_key"
+                                  id="mollie_api_key"
+                                  class="form-control"
+                                  value="******************"
+                                  placeholder="Mollie Api Key"
+                                />
+                              </div>
+                            </div>
+                            <div class="col-md-6">
+                              <div class="form-group">
+                                <label
+                                  for="mollie_profile_id"
+                                  class="col-form-label"
+                                  >Mollie Profile Id</label
+                                >
+                                <input
+                                  type="text"
+                                  name="mollie_profile_id"
+                                  id="mollie_profile_id"
+                                  class="form-control"
+                                  value="******************"
+                                  placeholder="Mollie Profile Id"
+                                />
+                              </div>
+                            </div>
+                            <div class="col-md-6">
+                              <div class="form-group">
+                                <label
+                                  for="mollie_partner_id"
+                                  class="col-form-label"
+                                  >Mollie Partner Id</label
+                                >
+                                <input
+                                  type="text"
+                                  name="mollie_partner_id"
+                                  id="mollie_partner_id"
+                                  class="form-control"
+                                  value="******************"
+                                  placeholder="Mollie Partner Id"
+                                />
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <!-- Skrill -->
+                    <div class="accordion-item">
+                      <h2 class="accordion-header" id="heading-2-10">
+                        <button
+                          class="accordion-button collapsed"
+                          type="button"
+                          data-bs-toggle="collapse"
+                          data-bs-target="#collapse9"
+                          aria-expanded="true"
+                          aria-controls="collapse9"
+                        >
+                          <span class="">
+                            Skrill
+                          </span>
+                          <div class="w-100 d-flex justify-content-end">
+                            <label
+                              class="custom-control-label form-control-label"
+                              for="is_skrill_enabled"
+                            >
+                              <span class="me-2">Enable</span></label
+                            >
+                            <div
+                              class="form-check form-switch custom-switch-v1"
+                            >
+                              <input
+                                type="hidden"
+                                name="is_skrill_enabled"
+                                value="off"
+                              />
+                              <input
+                                type="checkbox"
+                                class="form-check-input"
+                                name="is_skrill_enabled"
+                                id="is_skrill_enabled"
+                                checked
+                              />
+                            </div>
+                          </div>
+                        </button>
+                      </h2>
+                      <div
+                        id="collapse9"
+                        class="accordion-collapse collapse"
+                        aria-labelledby="heading-2-10"
+                        data-bs-parent="#accordionExample"
+                      >
+                        <div class="accordion-body">
+                          <div class="row">
+                            <div class="col-md-6">
+                              <div class="form-group">
+                                <label
+                                  for="mollie_api_key"
+                                  class="col-form-label"
+                                  >Skrill Email</label
+                                >
+                                <input
+                                  type="text"
+                                  name="skrill_email"
+                                  id="skrill_email"
+                                  class="form-control"
+                                  value="******************"
+                                  placeholder="Enter Skrill Email"
+                                />
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <!-- CoinGate -->
+                    <div class="accordion-item">
+                      <h2 class="accordion-header" id="heading-2-11">
+                        <button
+                          class="accordion-button collapsed"
+                          type="button"
+                          data-bs-toggle="collapse"
+                          data-bs-target="#collapse10"
+                          aria-expanded="true"
+                          aria-controls="collapse10"
+                        >
+                          <span class="">
+                            CoinGate
+                          </span>
+                          <div class="w-100 d-flex justify-content-end">
+                            <label
+                              class="custom-control-label form-control-label"
+                              for="is_coingate_enabled"
+                            >
+                              <span class="me-2">Enable</span></label
+                            >
+                            <div
+                              class="form-check form-switch custom-switch-v1"
+                            >
+                              <input
+                                type="hidden"
+                                name="is_coingate_enabled"
+                                value="off"
+                              />
+                              <input
+                                type="checkbox"
+                                class="form-check-input"
+                                name="is_coingate_enabled"
+                                id="is_coingate_enabled"
+                                checked
+                              />
+                            </div>
+                          </div>
+                        </button>
+                      </h2>
+                      <div
+                        id="collapse10"
+                        class="accordion-collapse collapse"
+                        aria-labelledby="heading-2-11"
+                        data-bs-parent="#accordionExample"
+                      >
+                        <div class="accordion-body">
+                          <div class="row">
+                            <div class="col-md-12 pb-4">
+                              <label
+                                class="col-form-label"
+                                for="coingate_mode"
+                                >CoinGate Mode</label
+                              >
+                              <br />
+                              <div class="d-flex">
+                                <div class="mr-2" style="margin-right: 15px">
+                                  <div class="border card p-3">
+                                    <div class="form-check">
+                                      <label
+                                        class="form-check-labe text-dark"
+                                      >
+                                        <input
+                                          type="radio"
+                                          name="coingate_mode"
+                                          value="sandbox"
+                                          class="form-check-input"
+                                          checked='"checked"'
+                                        />
+
+                                        Sandbox
+                                      </label>
+                                    </div>
+                                  </div>
+                                </div>
+                                <div class="mr-2">
+                                  <div class="border card p-3">
+                                    <div class="form-check">
+                                      <label
+                                        class="form-check-labe text-dark"
+                                      >
+                                        <input
+                                          type="radio"
+                                          name="coingate_mode"
+                                          value="live"
+                                          class="form-check-input"
+                                        />
+                                        Live
+                                      </label>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="col-md-6">
+                              <div class="form-group">
+                                <label
+                                  for="coingate_auth_token"
+                                  class="col-form-label"
+                                  >CoinGate Auth Token</label
+                                >
+                                <input
+                                  type="text"
+                                  name="coingate_auth_token"
+                                  id="coingate_auth_token"
+                                  class="form-control"
+                                  value="******************"
+                                  placeholder="CoinGate Auth Token"
+                                />
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-12 col-md-12 col-sm-12 text-end mt-3">
+                <input
+                  class="btn btn-print-invoice btn-primary m-r-10"
+                  type="submit"
+                  value="Save Changes"
+                />
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
