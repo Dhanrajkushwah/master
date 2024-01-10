@@ -30,6 +30,7 @@ import { PlanRequestComponent } from './component/pages/plan-request/plan-reques
 import { CouponsComponent } from './component/pages/coupons/coupons.component';
 import { AddCouponsComponent } from './component/shared/add-coupons/add-coupons.component';
 import { OrderComponent } from './component/pages/order/order.component';
+import { AddCostompageComponent } from './component/shared/add-costompage/add-costompage.component';
 
 
 
@@ -61,6 +62,7 @@ import { OrderComponent } from './component/pages/order/order.component';
     CouponsComponent,
     AddCouponsComponent,
     OrderComponent,
+    AddCostompageComponent
     
   ],
   imports: [

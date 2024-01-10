@@ -19,6 +19,7 @@ import { CouponsComponent } from './component/pages/coupons/coupons.component';
 import { AddCouponsComponent } from './component/shared/add-coupons/add-coupons.component';
 import { PlanRequestComponent } from './component/pages/plan-request/plan-request.component';
 import { OrderComponent } from './component/pages/order/order.component';
+import { AddCostompageComponent } from './component/shared/add-costompage/add-costompage.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'dashboard', pathMatch: 'full' },
@@ -71,6 +72,10 @@ const routes: Routes = [
       {
         path : 'custompage' ,
         component : CustomPageComponent   
+      },
+      {
+        path : 'custompage/add' ,
+        component : AddCostompageComponent   
       },
       {
         path : 'homepage' ,
